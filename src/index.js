@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store'
+import ReduxContext from './contexts/ReduxContext';
 // import { addTodo, completeTodo, showComplete, } from './redux/actions';
 
 
@@ -20,7 +21,9 @@ import store from './redux/store'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App store={store} />
+    <ReduxContext.Provider value={store}>
+      <App />
+    </ReduxContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
